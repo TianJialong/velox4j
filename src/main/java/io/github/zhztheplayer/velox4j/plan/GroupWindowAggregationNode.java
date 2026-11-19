@@ -35,6 +35,8 @@ public class GroupWindowAggregationNode extends PlanNode {
   private final boolean isEventTime;
   private final Integer windowType;
   private final Long gap;
+  private final Long size;
+  private final Long slide;
   private final Integer windowStartIndex;
   private final Integer windowEndIndex;
   private final RowType outputType;
@@ -51,6 +53,8 @@ public class GroupWindowAggregationNode extends PlanNode {
       @JsonProperty("isEventTime") boolean isEventTime,
       @JsonProperty("windowType") Integer windowType,
       @JsonProperty("gap") Long gap,
+      @JsonProperty("size") Long size,
+      @JsonProperty("slide") Long slide,
       @JsonProperty("windowStartIndex") Integer windowStartIndex,
       @JsonProperty("windowEndIndex") Integer windowEndIndex,
       @JsonProperty("outputType") RowType outputType) {
@@ -70,6 +74,8 @@ public class GroupWindowAggregationNode extends PlanNode {
     this.isEventTime = isEventTime;
     this.windowType = windowType;
     this.gap = gap;
+    this.size = size;
+    this.slide = slide;
     this.windowStartIndex = windowStartIndex;
     this.windowEndIndex = windowEndIndex;
     this.outputType = outputType;
@@ -118,6 +124,16 @@ public class GroupWindowAggregationNode extends PlanNode {
   @JsonGetter("gap")
   public Long getGap() {
     return gap;
+  }
+
+  @JsonGetter("size")
+  public Long getSize() {
+    return size;
+  }
+
+  @JsonGetter("slide")
+  public Long getSlide() {
+    return slide;
   }
 
   @JsonGetter("windowStartIndex")

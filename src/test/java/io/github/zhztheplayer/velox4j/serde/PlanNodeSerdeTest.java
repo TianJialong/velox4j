@@ -199,6 +199,8 @@ public class PlanNodeSerdeTest {
             true,
             2,
             10L,
+            0L,
+            0L,
             2,
             3,
             outputType);
